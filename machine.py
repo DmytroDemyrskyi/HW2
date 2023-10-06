@@ -29,7 +29,6 @@ def people_generator():
                 email = fake.ascii_free_email()
                 content += str(i) + '. ' + first_name + ' ' + email + '<br>'
                 i = i + 1
-
         else:
             content = 'Ошибка. Введите число от 1 до 10000'
     except ValueError:
