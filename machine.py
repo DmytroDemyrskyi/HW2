@@ -1,7 +1,8 @@
-from flask import Flask, request
-from faker import Faker
 import csv
+
 import requests
+from faker import Faker
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -28,6 +29,7 @@ def people_generator():
                 email = fake.ascii_free_email()
                 content += str(i) + '. ' + first_name + ' ' + email + '<br>'
                 i = i + 1
+
         else:
             content = 'Ошибка. Введите число от 1 до 10000'
     except ValueError:
@@ -38,7 +40,6 @@ def people_generator():
 
 @app.route('/mean/')
 def average_value():
-    content = ''
     height = 0
     weight = 0
     row_count = 0
